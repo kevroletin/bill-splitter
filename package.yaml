@@ -1,0 +1,53 @@
+name:                bill-splitter
+version:             0.1.0.0
+github:              "kevroletin/bill-splitter"
+license:             BSD3
+author:              "Vasiliy Kevroletin"
+maintainer:          "kevroletin@gmail.com"
+copyright:           "2018 Vasiliy K."
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            Web
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README on GitHub at <https://github.com/githubuser/bill-splitter#readme>
+
+dependencies:
+- base >= 4.7 && < 5
+- text
+- containers
+- mtl
+- transformers
+- exceptions
+
+library:
+  source-dirs: src
+
+executables:
+  bill-splitter:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - bill-splitter
+
+default-extensions:
+  - BangPatterns
+  - FlexibleContexts
+  - FlexibleInstances
+  - LambdaCase
+  - MultiParamTypeClasses
+  - OverloadedStrings
+  - RecordWildCards
+  - ScopedTypeVariables
+  - ViewPatterns
